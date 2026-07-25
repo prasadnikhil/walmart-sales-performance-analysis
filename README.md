@@ -4,10 +4,16 @@
 
 ### 🎯 Brief Project Info :-
 
-"Excel analysis of 421K+ Walmart sales records — pivot tables, VLOOKUP, dashboard and business insights"
 - I built a Walmart Sales Performance Analysis using Excel, combining pivot tables, VLOOKUP-based store classification, and formula-driven KPIs.
 - The report highlights key patterns in sales by store type, holiday impact, department performance, markdown effectiveness, and economic sensitivity.
-- The final analysis offers a clear, data-driven view of what actually drives Walmart's weekly revenue.
+- The final dashboard offers a clear, data-driven view of what actually drives Walmart's weekly revenue.
+
+---
+
+## 📂 Dataset
+
+- Source: [Walmart Recruiting - Store Sales Forecasting (Kaggle)](https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting)
+- 421,570 weekly sales records across 45 stores, 143 weeks (2010–2012)
 
 ---
 
@@ -21,7 +27,7 @@
 | **Time Period** | 2010–2012 |
 | **Holiday Sales Lift** | **+7.1%** vs regular weeks |
 
-**Key Insight:** Even though holiday weeks make up a small fraction of the calendar, they consistently outperform regular weeks — a **7.1% lift** worth planning inventory and staffing around.
+**Key Insight:** Even though holiday weeks make up a small fraction of the calendar, they consistently outperform regular weeks — a **7.1% lift** ($17,036 vs $15,901 avg) worth planning inventory and staffing around.
 
 ---
 
@@ -37,17 +43,6 @@
 
 ---
 
-## 📈 Holiday vs Non-Holiday Sales
-
-| Week Type | Avg Weekly Sales |
-|---|---|
-| **Holiday Week** | **$17,036** |
-| Non-Holiday Week | $15,901 |
-
-**Insight:** Holiday weeks (Thanksgiving, Christmas, Super Bowl, Labor Day) show a consistent, measurable lift — useful for forecasting seasonal staffing and stock levels.
-
----
-
 ## 🏆 Top 5 Departments by Revenue
 
 | Department | Total Sales |
@@ -58,7 +53,7 @@
 | Dept 72 | $306M |
 | Dept 90 | $291M |
 
-**Key Insight:** A small handful of departments drive a disproportionate share of total revenue — the classic 80/20 pattern retail chains plan floor space around.
+**Key Insight:** Dept 92 alone brings in more than double the #4 department — revenue is concentrated in a handful of departments rather than spread evenly.
 
 ---
 
@@ -69,29 +64,22 @@
 | **Had Markdown** | **$16,177** |
 | No Markdown | $15,872 |
 
-**Insight:** Weeks with an active markdown/promo show modestly higher average sales — a small but real lift that supports continuing promotional campaigns.
+**Insight:** Markdown weeks average only ~1.9% higher sales than non-markdown weeks — suggesting markdowns alone are a relatively weak lever for driving revenue.
 
 ---
 
 ## 📊 Economic Sensitivity (CPI & Unemployment)
 
-- Average weekly sales stayed **largely flat across both CPI and unemployment ranges**, with no strong downward trend even in high-inflation or high-unemployment periods.
-- **Insight:** This is consistent with Walmart's position as a value-oriented retailer — consumers tend to shift spending *toward* low-cost retailers during economic pressure, not away from them.
+- Sales peak in the **180–185 CPI band** ($21,291) then trend down at higher CPI — a non-linear relationship, not a straight-line correlation.
+- Sales are highest in the rare **3–4% unemployment** band, then flatten around $14K–$17K across the rest of the range — unemployment alone doesn't cleanly predict sales.
+- **Insight:** Consistent with Walmart's position as a value-oriented retailer — sales don't collapse under inflation or unemployment pressure the way they might for premium retailers.
 
 ---
 
-## 🏆 Store Efficiency (Sales per Square Foot)
+## ⚠️ Store Sales Volatility
 
-- Ranked all 45 stores by **Sales per Square Foot** rather than raw total sales — a fairer comparison between large and small-format stores.
-- Classified stores into **High / Medium / Low Efficiency** tiers using a VLOOKUP-based lookup table.
-
-| Performance Tier | Total Sales |
-|---|---|
-| **Medium Efficiency** | **$2.73B** |
-| Low Efficiency | $2.13B |
-| High Efficiency | $1.88B |
-
-**Key Insight:** Several smaller-format stores ranked in the **High Efficiency** tier despite lower total revenue — proving that raw sales totals alone can be misleading without adjusting for store size.
+- Measured **Coefficient of Variation (CV)** per store to flag which locations have the most unpredictable week-to-week sales.
+- **Store 43** is the least predictable (CV 0.327) — more than double Store 44's 0.151 — flagging where forecasting and staffing need extra buffer.
 
 ---
 
@@ -100,32 +88,35 @@
 🔥 **Top Revenue Drivers**
 1. **Type A (large-format) stores** — 64.3% of total revenue
 2. **Holiday weeks** — consistent +7.1% sales lift
-3. **Top 5 departments** — disproportionate share of total sales
-4. **Active markdown campaigns** — modest but real sales lift
+3. **Dept 92** — single largest department, 2x the #4 department
 
 📉 **Economic Resilience**
-- Sales remain stable regardless of CPI or unemployment level — Walmart shows low sensitivity to macroeconomic downturns.
+- Sales show a non-linear, resilient relationship with both CPI and unemployment — no simple "inflation hurts sales" pattern.
 
-🏬 **Efficiency Over Size**
-- Store size alone doesn't predict performance — several smaller stores outperform larger ones on a per-square-foot basis.
+⚠️ **Forecasting Risk**
+- A handful of stores (led by Store 43) show significantly higher sales volatility — these need larger safety buffers in demand planning.
 
 ---
 
 ## 💡 Recommendations
 
-1. **📦 Prioritize Inventory for Holiday Weeks:** Increase stock and staffing ahead of major holidays given the consistent sales lift.
+1. **📦 Prioritize Inventory for Holiday Weeks:** Increase stock and staffing ahead of major holidays given the consistent ~7% sales lift.
 2. **🏬 Focus Expansion on Large-Format (Type A) Stores:** These deliver the highest revenue share and warrant continued investment.
-3. **🏷 Continue Targeted Markdown Campaigns:** The modest but real lift justifies keeping promotional activity, especially in underperforming departments.
-4. **📊 Use Sales-per-SqFt, Not Just Totals, for Store Reviews:** Adjust performance evaluations for store size to avoid rewarding large stores by default.
-5. **🌎 Don't Over-React to Economic Indicators:** Since sales are resilient to CPI/unemployment shifts, forecasting models shouldn't over-weight macroeconomic swings.
+3. **🏷 Re-evaluate Markdown ROI:** With only a ~1.9% sales lift, markdown campaigns should be tested against their actual cost before scaling further.
+4. **📊 Add Volatility Buffers for High-Risk Stores:** Stores like #43 and #42 need wider forecasting margins due to unpredictable demand.
+5. **🌎 Don't Over-React to Economic Indicators:** Sales resilience across CPI/unemployment ranges means forecasting models shouldn't over-weight macroeconomic swings.
 
 ---
 
-## Dashboard & Pivot Table Images :-
+## 📊 Dashboard
 
-![pivot table overview](pivot-tables-overview.png)
+![Walmart Sales Dashboard](walmart-dashboard.gif)
 
-![store efficiency chart](store-efficiency-chart.png)
+## 📋 Pivot Tables
+
+![Walmart Pivot Tables](walmart-pivot-tables.png)
+
+---
 
 ## Tools & Techniques Used
 
@@ -133,9 +124,10 @@
 
 - Cleaned and merged 3 source files (sales, store attributes, economic/promo data) into one 421,570-row dataset
 - Handled missing values (markdown blanks filled with 0), flagged negative sales as returns, added derived time columns
-- Built 7 pivot tables answering distinct business questions
-- Used VLOOKUP to classify all 45 stores into performance tiers based on efficiency ranking
+- Built pivot tables answering distinct business questions: store type, holiday impact, departments, markdown effectiveness, CPI, unemployment
+- Used VLOOKUP to classify stores into performance tiers based on efficiency ranking
 
 ## About
 
 Excel-based sales performance analysis using real, publicly available Walmart transactional data (2010–2012).
+
