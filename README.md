@@ -1,9 +1,10 @@
-# walmart-sales-performance-analysis
+
 "Excel analysis of 421K+ Walmart sales records — pivot tables, VLOOKUP, dashboard and business insights"
 # 🛒 Walmart Sales Performance Analysis (2010–2012)
 
 ### 🎯 Brief Project Info :-
 
+"Excel analysis of 421K+ Walmart sales records — pivot tables, VLOOKUP, dashboard and business insights"
 - I built a Walmart Sales Performance Analysis using Excel, combining pivot tables, VLOOKUP-based store classification, and formula-driven KPIs.
 - The report highlights key patterns in sales by store type, holiday impact, department performance, markdown effectiveness, and economic sensitivity.
 - The final analysis offers a clear, data-driven view of what actually drives Walmart's weekly revenue.
