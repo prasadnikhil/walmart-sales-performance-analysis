@@ -1,5 +1,5 @@
 
-"Excel analysis of 421K+ Walmart sales records — pivot tables, VLOOKUP, dashboard and business insights"
+
 # 🛒 Walmart Sales Performance Analysis (2010–2012)
 
 ### 🎯 Brief Project Info :-
